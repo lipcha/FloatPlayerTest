@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TestPlayer</string>
+    <string name="draw_other_app_permission_denied">Draw over other app permission not available. App won\'t work without permission. Please try again.</string>
+</resources>
