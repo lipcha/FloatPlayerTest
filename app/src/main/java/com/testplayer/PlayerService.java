@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
+
 import com.testplayer.models.DownloadState;
 import com.testplayer.hls_downloader.HlsDownloader;
 import com.testplayer.models.PlayerState;
@@ -104,6 +106,13 @@ public class PlayerService extends Service implements View.OnClickListener {
             mPlayer.setFilePath(downloadState.getOutFilePath());
             mPlayerControllerView.setOnClickListener(this);
             mPlayer.play();
+            return;
+        }
+        if (downloadState.getError() != null){
+            mPlayerControllerView.setOnClickListener(this);
+            mPlayerControllerView.showPlay();
+            Toast.makeText(this, "Load error :  " + downloadState.getError().getMessage(), Toast.LENGTH_SHORT).show();
+            return;
         }
     }
 

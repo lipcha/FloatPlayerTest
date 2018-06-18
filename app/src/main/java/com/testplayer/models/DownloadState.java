@@ -41,4 +41,8 @@ public class DownloadState {
     public String getOutFilePath() {
         return outFilePath;
     }
+
+    public Throwable getError() {
+        return error;
+    }
 }

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == DRAW_OVER_OTHER_APP_REQUEST_CODE) {
             if (resultCode == RESULT_OK)
-                startFloatingPlayerService();
+                createFloatingPlayer();
             else
                 Toast.makeText(this, getString(R.string.draw_other_app_permission_denied), Toast.LENGTH_SHORT).show();
 

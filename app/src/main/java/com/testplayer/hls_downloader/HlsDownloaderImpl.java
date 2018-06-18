@@ -71,7 +71,7 @@ public class HlsDownloaderImpl implements HlsDownloader {
                     .retryInterval(2, TimeUnit.SECONDS)
                     .progressInterval(500, TimeUnit.MILLISECONDS)
                     .priority(Priority.HIGH)
-                    .allowedNetworkTypes(DownloadRequest.NETWORK_WIFI)
+                    .allowedNetworkTypes(DownloadRequest.NETWORK_WIFI | DownloadRequest.NETWORK_MOBILE)
                     .destinationFilePath(outFilePath)
                     .downloadCallback(new RxDownloadCallback(emitter, mDownloadManager))
                     .build();
